@@ -33,6 +33,7 @@ class PageSection {
 			$this->data->menu_items['Templates']['SOA templates'] = '/templates/soa';
 			$this->data->menu_items['Templates']['Nameserver templates'] = '/templates/ns';
 		}
+		$this->data->menu_items['Logout'] = $_SERVER['REQUEST_SCHEME'].'://'.uuid_create().'@'.$_SERVER['SERVER_NAME'].str_replace($relative_request_url, '', $_SERVER['REQUEST_URI']);
 		$this->data->relative_request_url = $relative_request_url;
 		$this->data->active_user = $active_user;
 		$this->data->web_config = $config['web'];
